@@ -71,13 +71,34 @@ const mascotSymbols = [
 ];
 
 const acronym = [
-  { l: "I", w: "International" },
-  { l: "N", w: "Seminar on" },
-  { l: "S", w: "Political Literacy" },
-  { l: "P", w: "Integrity" },
-  { l: "I", w: "Responsible" },
-  { l: "R", w: "Leadership" },
-  { l: "E", w: "Expo" },
+  {
+    l: "I",
+    w: "Innovation — Creating new ideas that shape the future through creativity, collaboration, and continuous improvement.",
+  },
+  {
+    l: "N",
+    w: "Networking — Connecting people, communities, and opportunities to build meaningful partnerships across local and global networks.",
+  },
+  {
+    l: "S",
+    w: "Sustainability — Promoting long-term impact through responsible actions, environmental awareness, and sustainable development.",
+  },
+  {
+    l: "P",
+    w: "Progress — Encouraging continuous growth, innovation, and positive change in every initiative and achievement.",
+  },
+  {
+    l: "I",
+    w: "Integrity — Upholding honesty, accountability, and strong ethical values in every decision and action.",
+  },
+  {
+    l: "R",
+    w: "Resilience — Developing the ability to adapt, overcome challenges, and grow stronger through every experience.",
+  },
+  {
+    l: "E",
+    w: "Excellence — Striving for the highest standards of quality, professionalism, and outstanding performance in everything we do.",
+  },
 ];
 
 const sponsors = Array.from({ length: 8 }, (_, i) => i + 1);
