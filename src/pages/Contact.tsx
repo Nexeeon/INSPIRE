@@ -1,50 +1,9 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Instagram, MapPin, Calendar, ArrowRight } from 'lucide-react';
 import Particles from '../components/Particles';
 import Reveal from '../components/Reveal';
 
 export default function Contact() {
-  // Proteksi Tambahan: Tangani force repaint saat halaman kembali dari background atau selesai dimuat
-  useEffect(() => {
-    const handleForceRepaint = () => {
-      try {
-        const iosElements = document.querySelectorAll('.ios-safari-fix');
-        iosElements.forEach((el) => {
-          // Trik mengubah display secara instan untuk memicu re-render mesin WebKit
-          const originalDisplay = el.style.display;
-          el.style.display = 'none';
-          // Membaca offsetHeight memaksa browser melakukan layout ulang (reflow)
-          const _ = el.offsetHeight; 
-          el.style.display = originalDisplay;
-        });
-      } catch (err) {
-        console.error("[INSPIRE 2026 Audit] Gagal melakukan force repaint di Safari iOS:", err);
-      }
-    };
-
-    window.addEventListener('pageshow', handleForceRepaint);
-    window.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible') handleForceRepaint();
-    });
-
-    return () => {
-      window.removeEventListener('pageshow', handleForceRepaint);
-      window.removeEventListener('visibilitychange', handleForceRepaint);
-    };
-  }, []);
-
-  // Style CSS inline khusus untuk menambal bug WebKit tanpa merusak file global.css Anda
-  const safariSafariFixStyle = {
-    WebkitTransform: 'translateZ(0)',
-    transform: 'translateZ(0)',
-    WebkitFontSmoothing: 'antialiased',
-    MozOsxFontSmoothing: 'grayscale',
-    willChange: 'transform, opacity',
-    backfaceVisibility: 'hidden',
-    WebkitBackfaceVisibility: 'hidden'
-  };
-
   return (
     <div className="relative">
       <Particles count={30} />
@@ -94,7 +53,7 @@ export default function Contact() {
 
             {/* Center: Contact info */}
             <Reveal delay={0.15}>
-              <div className="glass rounded-3xl p-8 md:p-10 ios-safari-fix" style={safariSafariFixStyle}>
+              <div className="glass rounded-3xl p-8 md:p-10">
                 <h2 className="font-cinzel text-2xl font-bold text-ivory mb-8 text-center">
                   Follow INSPIRE 2026
                 </h2>
@@ -105,13 +64,12 @@ export default function Contact() {
                     href="https://instagram.com/inspire_polsri"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-2xl glass-gold hover:bg-gold/10 transition-all duration-300 group ios-safari-fix"
-                    style={safariSafariFixStyle}
+                    className="flex items-center gap-4 p-4 rounded-2xl glass-gold hover:bg-gold/10 transition-all duration-300 group"
                   >
                     <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-burgundy to-gold-700 flex items-center justify-center flex-shrink-0">
                       <Instagram size={22} className="text-ivory" />
                     </div>
-                    <div className="w-full" style={{ opacity: 1 }}> {/* Force Opacity Fallback */}
+                    <div>
                       <p className="font-poppins text-xs text-gold/60 uppercase tracking-wider">
                         Instagram
                       </p>
@@ -122,11 +80,11 @@ export default function Contact() {
                   </a>
 
                   {/* Location */}
-                  <div className="flex items-center gap-4 p-4 rounded-2xl glass ios-safari-fix" style={safariSafariFixStyle}>
+                  <div className="flex items-center gap-4 p-4 rounded-2xl glass">
                     <div className="w-12 h-12 rounded-xl glass-gold flex items-center justify-center flex-shrink-0">
                       <MapPin size={22} className="text-gold" />
                     </div>
-                    <div className="w-full" style={{ opacity: 1 }}> {/* Force Opacity Fallback */}
+                    <div>
                       <p className="font-poppins text-xs text-gold/60 uppercase tracking-wider">
                         Location
                       </p>
@@ -140,11 +98,11 @@ export default function Contact() {
                   </div>
 
                   {/* Event Date */}
-                  <div className="flex items-center gap-4 p-4 rounded-2xl glass ios-safari-fix" style={safariSafariFixStyle}>
+                  <div className="flex items-center gap-4 p-4 rounded-2xl glass">
                     <div className="w-12 h-12 rounded-xl glass-gold flex items-center justify-center flex-shrink-0">
                       <Calendar size={22} className="text-gold" />
                     </div>
-                    <div className="w-full" style={{ opacity: 1 }}>
+                    <div>
                       <p className="font-poppins text-xs text-gold/60 uppercase tracking-wider">
                         Event Date
                       </p>
