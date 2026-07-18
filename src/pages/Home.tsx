@@ -9,12 +9,11 @@ import {
   Calendar,
   Clock,
   MapPin,
-  Instagram,
   Sparkles,
+  Sparkle,
 } from "lucide-react";
 import Particles from "../components/Particles";
 import Countdown from "../components/Countdown";
-import Counter from "../components/Counter";
 import Reveal from "../components/Reveal";
 
 const features = [
@@ -93,7 +92,6 @@ export default function Home() {
 
       {/* HERO */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-24 pb-12">
-        {/* Subtle background glow */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold/5 blur-[150px]" />
         </div>
@@ -187,7 +185,7 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            {/* Right: Phoenix mascot */}
+            {/* Right: Mascot */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -195,7 +193,6 @@ export default function Home() {
               className="relative flex justify-center lg:justify-end"
             >
               <div className="relative">
-                {/* Glow behind mascot */}
                 <div className="absolute inset-0 bg-gold/20 blur-[80px] rounded-full scale-150" />
                 <img
                   src="/assets/images/maskot.png"
@@ -294,7 +291,6 @@ export default function Home() {
           <Reveal delay={0.2}>
             <div className="glass rounded-3xl overflow-hidden">
               <div className="grid md:grid-cols-2 items-center">
-                {/* Speaker image */}
                 <div className="relative w-full h-full flex items-center justify-center bg-gradient-to-br from-burgundy/30 to-charcoal-800 overflow-hidden">
                   <img
                     src="/assets/images/Sherly Annavita Rahmi.png"
@@ -303,7 +299,6 @@ export default function Home() {
                   />
                 </div>
 
-                {/* Speaker info */}
                 <div className="p-8 md:p-12">
                   <h3 className="font-cinzel text-3xl font-bold text-gradient-gold">
                     Sherly Annavita Rahmi
@@ -351,7 +346,6 @@ export default function Home() {
           </Reveal>
 
           <div className="relative">
-            {/* Vertical line */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/0 via-gold/40 to-gold/0 md:-translate-x-1/2" />
 
             {timeline.map((item, i) => (
@@ -361,13 +355,10 @@ export default function Home() {
                     i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                   }`}
                 >
-                  {/* Dot */}
                   <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-gold -translate-x-1/2 z-10 shadow-[0_0_15px_rgba(255,215,0,0.6)]" />
 
-                  {/* Spacer for desktop */}
                   <div className="hidden md:block flex-1" />
 
-                  {/* Card */}
                   <div
                     className={`flex-1 ml-12 md:ml-0 ${i % 2 === 0 ? "md:pl-12" : "md:pr-12 md:text-right"}`}
                   >
@@ -400,58 +391,250 @@ export default function Home() {
         </div>
       </section>
 
-      {/* STATISTICS */}
-      <section className="relative z-10 py-32 px-6">
-        <div className="max-w-5xl mx-auto">
+      {/* EXPO COMING SOON SECTION */}
+      <section className="relative z-10 py-32 px-6 overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-burgundy/10 blur-[130px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="text-center mb-16">
-              <p className="font-poppins text-sm text-gold/60 uppercase tracking-[0.3em] mb-3">
-                By The Numbers
-              </p>
-              <h2 className="section-title">Event Statistics</h2>
-            </div>
-          </Reveal>
+            <div className="group relative glass rounded-[2.5rem] p-8 md:p-16 border border-gold/20 hover:border-gold/40 transition-all duration-700 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden bg-charcoal/30 backdrop-blur-xl">
+              {/* Background ambient accents */}
+              <div className="absolute -top-32 -right-32 w-64 h-64 bg-gradient-to-br from-gold/15 to-transparent rounded-full blur-2xl pointer-events-none group-hover:scale-125 transition-transform duration-1000" />
+              <div className="absolute -bottom-32 -left-32 w-64 h-64 bg-gradient-to-tr from-burgundy/20 to-transparent rounded-full blur-2xl pointer-events-none" />
 
-          <Reveal delay={0.2}>
-            <div className="glass rounded-3xl p-12">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <Counter end={1000} suffix="+" label="Participants" />
-                <Counter end={30} suffix="+" label="Student Organizations" />
-                <Counter end={1} suffix="" label="International Seminar" />
-                <Counter end={1} suffix="" label="Expo" />
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
+              <div className="grid lg:grid-cols-12 gap-12 items-center relative z-10">
+                {/* Left Side Info Area */}
+                <div className="lg:col-span-6 text-center lg:text-left space-y-6">
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/5 backdrop-blur-sm shadow-[inset_0_0_12px_rgba(255,215,0,0.1)]">
+                    <span className="font-poppins text-xs font-semibold uppercase tracking-[0.25em] bg-gradient-to-r from-gold via-ivory to-gold bg-[length:200%_auto] animate-text-shimmer text-transparent bg-clip-text">
+                      Coming Soon
+                    </span>
+                    
+                  </div>
 
-      {/* FINAL CTA */}
-      <section className="relative z-10 py-32 px-6">
-        <div className="max-w-4xl mx-auto">
-          <Reveal>
-            <div className="relative rounded-3xl overflow-hidden p-12 md:p-20 text-center">
-              {/* Gold gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gold via-gold-400 to-gold-600" />
-              <div className="absolute inset-0 bg-charcoal-900/20" />
+                  <h2 className="font-cinzel text-4xl md:text-5xl lg:text-6xl font-bold text-gradient-gold-shimmer tracking-wide leading-tight">
+                    EXPO <br className="hidden lg:block" />
+                    INSPIRE 2026
+                  </h2>
 
-              {/* Decorative glow */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-white/20 blur-[80px] rounded-full" />
+                  <p className="font-cormorant text-xl md:text-2xl text-ivory/90 font-medium italic tracking-wide">
+                    Sinergi, Inovasi, & Kreativitas Mahasiswa
+                  </p>
 
-              <div className="relative z-10">
-                <h2 className="font-cinzel text-4xl md:text-5xl font-bold text-charcoal-900 mb-4">
-                  Be Part of Something Extraordinary
-                </h2>
-                <p className="font-cormorant text-xl text-charcoal-900/70 italic mb-8 max-w-2xl mx-auto">
-                  Join 1000+ participants, 30+ student organizations, and
-                  visionary leaders at INSPIRE 2026.
-                </p>
-                <Link
-                  to="/contact"
-                  className="inline-flex items-center gap-3 px-10 py-4 rounded-full bg-charcoal-900 text-gold font-poppins font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl"
-                >
-                  Register Now
-                  <ArrowRight size={20} />
-                </Link>
+                  <p className="font-poppins text-sm md:text-base text-ivory/60 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                    Membawa vibes baru yang dinamis dan interaktif.
+                    Mempertemukan seluruh elemen organisasi kemahasiswaan dalam
+                    display karya unggulan, kolaborasi strategis, dan perayaan
+                    inovasi nyata. Persiapkan barisan dan nantikan info
+                    resminya!
+                  </p>
+
+                  <div className="pt-4 flex justify-center lg:justify-start">
+                    <div className="h-0.5 w-24 bg-gradient-to-r from-gold to-transparent rounded-full" />
+                  </div>
+                </div>
+
+                {/* Right Side Poster Graphic Composition */}
+                <div className="lg:col-span-6 flex justify-center items-center relative min-h-[400px]">
+                  <div className="relative w-80 h-96 md:w-96 md:h-[420px] flex items-center justify-center">
+                    {/* Dark Background Contrast Plate */}
+                    <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-charcoal-900/60 to-burgundy/40 border border-ivory/5 shadow-inner scale-105 pointer-events-none" />
+
+                    {/* STACKED PAPERS COMPOSITION */}
+                    <div className="absolute w-64 h-80 md:w-72 md:h-88 bg-ivory/10 rounded-xl shadow-md rotate-[-8deg] -translate-x-6 -translate-y-4 border border-gold/10 backdrop-blur-sm" />
+                    <div className="absolute w-64 h-80 md:w-72 md:h-88 bg-burgundy/20 rounded-xl shadow-lg rotate-[-3deg] -translate-x-2 -translate-y-1 border border-gold/20 backdrop-blur-sm" />
+
+                    {/* Front Principal Poster Canvas */}
+                    <div className="absolute w-64 h-80 md:w-72 md:h-88 bg-gradient-to-b from-burgundy to-charcoal-900 rounded-xl shadow-[5px_15px_35px_rgba(0,0,0,0.5)] rotate-[3deg] translate-x-4 translate-y-3 p-6 flex flex-col justify-between overflow-hidden border border-gold/30 select-none">
+                      <div className="flex justify-between items-center opacity-40 border-b border-gold/20 pb-2">
+                        <span className="font-mono text-[9px] tracking-widest text-gold">
+                          INSPIRE_2026 // POSTER_01
+                        </span>
+                        <div className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                      </div>
+
+                      <div className="my-auto space-y-1 transform -rotate-1">
+                        <div className="font-cinzel text-4xl md:text-5xl font-black text-gradient-gold tracking-tighter leading-none select-none">
+                          COMING
+                        </div>
+
+                        <div className="flex items-center gap-1.5 py-0.5">
+                          <div className="font-cinzel text-4xl md:text-5xl font-black text-gradient-gold tracking-tighter leading-none">
+                            SOON
+                          </div>
+
+                          <div className="flex items-center text-gold pl-1 transform scale-110">
+                            <div className="flex flex-col gap-0.5 items-end opacity-70 pr-0.5">
+                              <div className="w-4 h-[2px] bg-gold rounded-full" />
+                              <div className="w-6 h-[2px] bg-gold rounded-full" />
+                              <div className="w-3 h-[2px] bg-gold rounded-full" />
+                            </div>
+                            <Clock
+                              size={28}
+                              strokeWidth={2.5}
+                              className="animate-[spin_20s_linear_infinite]"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="space-y-2 mt-2 pt-2 border-t border-dashed border-gold/20">
+                        <div className="w-full bg-gold text-charcoal font-poppins text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] py-1.5 px-3 rounded-md shadow-sm transform -rotate-1 text-center">
+                          SEMINAR &
+                        </div>
+                        <div className="w-[90%] bg-ivory/10 border border-gold/30 text-gold font-poppins text-[10px] md:text-xs font-bold uppercase tracking-[0.18em] py-1.5 px-3 rounded-md shadow-sm transform rotate-1 text-center mx-auto backdrop-blur-sm">
+                          EXPO ORMAWA
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* IMMUTABLE INLINE VECTOR (SVG) MAGNIFYING GLASS */}
+                    {/* Menggunakan kesatuan SVG murni sehingga rasio ukuran lingkaran dan gagang tidak akan terlepas saat animasi rotasi */}
+                    <motion.div
+                      animate={{
+                        y: [-12, 12, -12],
+                        x: [0, 6, 0],
+                        rotate: [2, 12, 2],
+                      }}
+                      transition={{
+                        duration: 5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute z-30 -top-4 -right-4 w-48 h-48 md:w-56 md:h-56 pointer-events-none filter drop-shadow-[15px_22px_24px_rgba(0,0,0,0.65)]"
+                    >
+                      <svg
+                        viewBox="0 0 200 200"
+                        className="w-full h-full"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        {/* DEFS FOR LOOK & FEEL LUXURY ACCENTS */}
+                        <defs>
+                          {/* Bingkai Emas Gradasi */}
+                          <linearGradient
+                            id="goldRim"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stopColor="#FFE58F" />
+                            <stop offset="50%" stopColor="#D4B138" />
+                            <stop offset="100%" stopColor="#9A7511" />
+                          </linearGradient>
+                          {/* Gagang Premium Burgundy/Charcoal Gradasi */}
+                          <linearGradient
+                            id="premiumHandle"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stopColor="#1A1A1A" />
+                            <stop offset="50%" stopColor="#581C24" />
+                            <stop offset="100%" stopColor="#0D0D0D" />
+                          </linearGradient>
+                          {/* Lapisan Kaca Refleksi Semu */}
+                          <radialGradient
+                            id="glassShine"
+                            cx="35%"
+                            cy="35%"
+                            r="60%"
+                          >
+                            <stop
+                              offset="0%"
+                              stopColor="#FFFFFF"
+                              stopOpacity="0.25"
+                            />
+                            <stop
+                              offset="40%"
+                              stopColor="#FFFFFF"
+                              stopOpacity="0.05"
+                            />
+                            <stop
+                              offset="100%"
+                              stopColor="#000000"
+                              stopOpacity="0.4"
+                            />
+                          </radialGradient>
+                        </defs>
+
+                        {/* 1. GAGANG (Diletakkan di urutan awal agar posisinya berada di bawah ring lensa secara hierarki) */}
+                        {/* Leher Logam Penghubung */}
+                        <path
+                          d="M125 125 L142 142"
+                          stroke="url(#goldRim)"
+                          strokeWidth="12"
+                          strokeLinecap="round"
+                        />
+                        {/* Batang Utama Gagang Pegangan */}
+                        <path
+                          d="M138 138 L185 185"
+                          stroke="url(#premiumHandle)"
+                          strokeWidth="16"
+                          strokeLinecap="round"
+                        />
+                        {/* Ring Emas hiasan dekoratif di ujung terbawah gagang */}
+                        <circle cx="182" cy="182" r="7" fill="url(#goldRim)" />
+                        {/* Cincin pembatas emas bagian atas gagang */}
+                        <circle cx="141" cy="141" r="9" fill="url(#goldRim)" />
+
+                        {/* 2. LINGKARAN UTAMA LENSA */}
+                        {/* Kaca Refleksi */}
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="54"
+                          fill="url(#glassShine)"
+                        />
+
+                        {/* Garis Crosshair Target Fokus Minimalis Di Dalam Kaca */}
+                        <path
+                          d="M72 80 L88 80"
+                          stroke="#D4B138"
+                          strokeWidth="1"
+                          strokeOpacity="0.3"
+                        />
+                        <path
+                          d="M80 72 L80 88"
+                          stroke="#D4B138"
+                          strokeWidth="1"
+                          strokeOpacity="0.3"
+                        />
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="22"
+                          stroke="#D4B138"
+                          strokeWidth="1"
+                          strokeDasharray="3 3"
+                          strokeOpacity="0.2"
+                        />
+
+                        {/* Bingkai Logam Emas Tebal Luar (Rim Ring) */}
+                        <circle
+                          cx="80"
+                          cy="80"
+                          r="54"
+                          stroke="url(#goldRim)"
+                          strokeWidth="6"
+                        />
+
+                        {/* Efek Kilauan Refleksi Putih Kurva Atas Lensa */}
+                        <path
+                          d="M42 55 A45 45 0 0 1 118 55"
+                          stroke="#FFFFFF"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeOpacity="0.3"
+                        />
+                      </svg>
+                 
+                 
+                    </motion.div>
+                  </div>
+                </div>
               </div>
             </div>
           </Reveal>
