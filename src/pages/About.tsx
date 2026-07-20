@@ -232,13 +232,13 @@ const mediaPartners = [
   {
     name: "BEM UPGRIS",
     username: "@bem_upgris",
-    image: "/assets/media-partners/BEM UPGRI Palembang.jpeg",
+    image: "/assets/media-partners/BEM UPGRIS.png",
     link: "https://instagram.com/bem_upgris",
   },
   {
     name: "BEM FEB UPGRIP",
     username: "@bemfeb_upgrip",
-    image: "/assets/media-partners/BEM UPGRI Palembang.jpeg",
+    image: "/assets/media-partners/BEM FEB UPGRIP.jpeg",
     link: "https://instagram.com/bemfeb_upgrip",
   },
   {
@@ -258,6 +258,12 @@ const mediaPartners = [
     username: "@bemilkomunsri",
     image: "/assets/media-partners/BEM UNILA.png",
     link: "https://instagram.com/bemilkomunsri",
+  },
+  {
+    name: "BEM FKG UNAND",
+    username: "@bemfkgunand",
+    image: "/assets/media-partners/BEM FKG UNAND.PNG",
+    link: "https://instagram.com/bemfkgunand",
   },
 ];
 
@@ -599,7 +605,7 @@ export default function About() {
                       src={m.image}
                       alt={m.name}
                       className="w-full h-full object-contain p-6 transition-transform duration-500 group-hover:scale-105"
-                      onError={(e) => {
+                      onError={() => {
                         console.error(
                           `Gagal memuat gambar media partner: ${m.name}`,
                         );

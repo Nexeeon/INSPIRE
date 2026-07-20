@@ -9,7 +9,7 @@ import {
   Calendar,
   Clock,
   MapPin,
-  Sparkles,
+ 
 } from "lucide-react";
 import Particles from "../components/Particles";
 import Countdown from "../components/Countdown";
@@ -161,16 +161,7 @@ export default function Home() {
                     className="group-hover:translate-x-1 transition-transform inline-block ml-1"
                   />
                 </Link>
-                <Link
-                  to="/about"
-                  className="btn-outline-gold group w-full sm:w-auto text-center justify-center"
-                >
-                  Explore Event
-                  <Sparkles
-                    size={18}
-                    className="group-hover:rotate-12 transition-transform inline-block ml-1"
-                  />
-                </Link>
+              
               </motion.div>
 
               <motion.div
