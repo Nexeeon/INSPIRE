@@ -87,7 +87,7 @@ const timeline = [
 export default function Home() {
   return (
     <div className="relative overflow-x-hidden">
-      <Particles count={15} smCount={25} />
+      <Particles count={15} />
 
       {/* HERO SECTION */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20 md:pt-24 pb-12">
@@ -209,7 +209,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Animated Scroll indicator - Hidden on Small Screens */}
+        {/* Animated Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -341,6 +341,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* MODERATOR SECTION */}
+      <section className="relative z-10 py-16 sm:py-24 md:py-32 px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto">
+          <Reveal>
+            <div className="text-center mb-10 sm:mb-16">
+              <p className="font-poppins text-xs sm:text-sm text-gold/60 uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-2 sm:mb-3">
+                Moderator
+              </p>
+              <h2 className="text-2xl sm:text-4xl font-cinzel font-bold text-ivory tracking-wide">
+                Meet Our Moderator
+              </h2>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <div className="glass rounded-2xl sm:rounded-3xl overflow-hidden">
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="relative w-full aspect-[4/5] md:aspect-auto md:h-full flex items-center justify-center bg-gradient-to-br from-burgundy/30 to-charcoal-800 overflow-hidden">
+                  <img
+                    src="/assets/images/Moderator.jpeg"
+                    alt="Zahra Athirah Putri"
+                    className="w-full h-full object-cover md:object-contain"
+                  />
+                </div>
+
+                <div className="p-6 sm:p-8 md:p-12">
+                  <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-gradient-gold">
+                    Zahra Athirah Putri
+                  </h3>
+                  <p className="mt-1 font-poppins text-xs sm:text-sm text-gold/70 uppercase tracking-wider">
+                    Moderator
+                  </p>
+
+                  <div className="mt-4 sm:mt-6 p-4 sm:p-5 rounded-xl sm:rounded-2xl glass-gold">
+                    <p className="font-poppins text-[10px] sm:text-xs text-gold/60 uppercase tracking-widest mb-1 sm:mb-2">
+                      Discussion Session
+                    </p>
+                    <p className="font-cormorant text-lg sm:text-xl text-ivory italic">
+                      "Guiding the International Seminar Discussion"
+                    </p>
+                  </div>
+
+                  <p className="mt-4 sm:mt-6 font-poppins text-xs sm:text-sm text-ivory/60 leading-relaxed">
+                    Zahra Athirah Putri serves as the moderator for INSPIRE 2026
+                    International Seminar. She will facilitate discussions,
+                    encourage meaningful interaction between speakers and
+                    participants, and ensure the seminar runs smoothly while
+                    creating an engaging and insightful atmosphere throughout
+                    the event.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* TIMELINE SECTION */}
       <section className="relative z-10 py-16 sm:py-24 md:py-32 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
@@ -359,7 +416,6 @@ export default function Home() {
           </Reveal>
 
           <div className="relative">
-            {/* Timeline center line adjusted position on mobile */}
             <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-gold/0 via-gold/40 to-gold/0 -translate-x-1/2" />
 
             {timeline.map((item, i) => (
@@ -499,7 +555,7 @@ export default function Home() {
                       </div>
                     </div>
 
-                    {/* RESPONSIVE INLINE VECTOR (SVG) MAGNIFYING GLASS */}
+                    {/* RESPONSIVE INLINE VECTOR MAGNIFYING GLASS */}
                     <motion.div
                       animate={{
                         y: [-8, 8, -8],
@@ -599,29 +655,6 @@ export default function Home() {
                           d="M80 72 L80 88"
                           stroke="#D4B138"
                           strokeWidth="1"
-                          strokeOpacity="0.3"
-                        />
-                        <circle
-                          cx="80"
-                          cy="80"
-                          r="22"
-                          stroke="#D4B138"
-                          strokeWidth="1"
-                          strokeDasharray="3 3"
-                          strokeOpacity="0.2"
-                        />
-                        <circle
-                          cx="80"
-                          cy="80"
-                          r="54"
-                          stroke="url(#goldRim)"
-                          strokeWidth="6"
-                        />
-                        <path
-                          d="M42 55 A45 45 0 0 1 118 55"
-                          stroke="#FFFFFF"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
                           strokeOpacity="0.3"
                         />
                       </svg>
